@@ -1,0 +1,10 @@
+# Arquivos internos de processo — não fazem parte do site publicado
+CLAUDE.md
+V2_REVIEW.md
+V3_UX.md
+V4_QA_SECURITY.md
+
+# Sistema
+.DS_Store
+Thumbs.db
+assets/images/_unused/
