@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Real Esportes — Viva o Jogo</title>
 <meta name="description" content="Real Esportes: chuteiras, camisas, tênis e acessórios esportivos. Descubra o seu jogo e fale com a gente pelo WhatsApp.">
-<meta name="theme-color" content="#080808">
+<meta name="theme-color" content="#000000">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 
 <!-- Protótipo ainda não oficial: remover noindex quando o site se tornar público/oficial -->
@@ -23,7 +23,7 @@
 <!-- TODO: adicionar <meta property="og:url" content="https://usuario.github.io/real-esportes/"> com a URL absoluta após o deploy no GitHub Pages -->
 <meta name="twitter:card" content="summary_large_image">
 
-<link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/icons/real-esportes-logo.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -37,7 +37,7 @@
 <header class="header" id="header">
   <div class="header__inner">
     <a href="#topo" class="header__logo" aria-label="Real Esportes — início">
-      <img src="assets/images/logo-real.png" alt="Real Esportes" class="header__logo-img" id="logo-img">
+      <img src="assets/icons/real-esportes-logo.png" class="header__logo-img" id="logo-img" alt="Real Esportes">
       <span class="header__logo-fallback" id="logo-fallback">
         <span>REAL</span><span>ESPORTES</span>
       </span>
@@ -81,6 +81,13 @@
 
     <a href="#chuteiras" class="hero__scroll" aria-label="Rolar para o conteúdo">
       <span class="hero__scroll-line"></span>
+      <svg class="hero__scroll-touch" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+        <path d="M31 38V15a5 5 0 0 1 10 0v26" />
+        <path d="M41 34v-7a5 5 0 0 1 10 0v13" />
+        <path d="M31 37v-5a5 5 0 0 0-10 0v11c0 9 7 16 16 16h7c8 0 14-6 14-14v-8a5 5 0 0 0-10 0v5" />
+        <path class="hero__scroll-touch-rays" d="M24 14l-3-3M36 9V5M48 14l3-3" />
+      </svg>
+      <span class="hero__scroll-label" aria-hidden="true">Role</span>
     </a>
   </section>
 
@@ -96,40 +103,42 @@
         <li class="rail__card reveal">
           <div class="rail__media">
             <img src="assets/images/produto-01.jpg" alt="Jovem atleta segurando uma chuteira de campo em estúdio" loading="lazy" decoding="async" draggable="false" width="800" height="1000">
-            <span class="rail__tag">Campo</span>
+            <span class="rail__tag">Chuteiras de campo</span>
           </div>
-          <a href="#" class="link-arrow js-whatsapp" data-wa-key="chuteiras" data-wa-tag="Campo">Consultar <span aria-hidden="true">→</span></a>
+          <a href="#" class="link-arrow js-whatsapp" data-wa-key="chuteiras" data-wa-tag="Campo">Consultar chuteiras de campo <span aria-hidden="true">→</span></a>
         </li>
         <li class="rail__card reveal">
           <div class="rail__media">
             <img src="assets/images/sticky-campo.jpg" alt="Chuteira e bola sobre gramado natural" loading="lazy" decoding="async" draggable="false" width="800" height="1000">
-            <span class="rail__tag">Campo</span>
+            <span class="rail__tag">Para jogar em campo</span>
           </div>
-          <a href="#" class="link-arrow js-whatsapp" data-wa-key="chuteiras" data-wa-tag="Campo">Consultar <span aria-hidden="true">→</span></a>
+          <a href="#" class="link-arrow js-whatsapp" data-wa-key="chuteiras" data-wa-tag="Campo">Consultar chuteiras de campo <span aria-hidden="true">→</span></a>
         </li>
         <li class="rail__card reveal">
           <div class="rail__media">
             <img src="assets/images/produto-02.jpg" alt="Par de chuteiras em destaque sobre o gramado" loading="lazy" decoding="async" draggable="false" width="800" height="1000">
-            <span class="rail__tag">Society</span>
+            <span class="rail__tag">Chuteiras de campo</span>
           </div>
-          <a href="#" class="link-arrow js-whatsapp" data-wa-key="chuteiras" data-wa-tag="Society">Consultar <span aria-hidden="true">→</span></a>
+          <a href="#" class="link-arrow js-whatsapp" data-wa-key="chuteiras" data-wa-tag="Campo">Consultar chuteiras de campo <span aria-hidden="true">→</span></a>
         </li>
         <li class="rail__card reveal">
           <div class="rail__media">
             <img src="assets/images/sticky-society.jpg" alt="Bola sobre grama sintética em campo society" loading="lazy" decoding="async" draggable="false" width="800" height="1000">
-            <span class="rail__tag">Society</span>
+            <span class="rail__tag">Para jogar em society</span>
           </div>
-          <a href="#" class="link-arrow js-whatsapp" data-wa-key="chuteiras" data-wa-tag="Society">Consultar <span aria-hidden="true">→</span></a>
+          <a href="#" class="link-arrow js-whatsapp" data-wa-key="chuteiras" data-wa-tag="Society">Consultar chuteiras society <span aria-hidden="true">→</span></a>
         </li>
         <li class="rail__card reveal">
           <div class="rail__media">
             <img src="assets/images/sticky-futsal.jpg" alt="Bola de futsal em quadra coberta" loading="lazy" decoding="async" draggable="false" width="800" height="1000">
-            <span class="rail__tag">Futsal</span>
+            <span class="rail__tag">Para jogar futsal</span>
           </div>
-          <a href="#" class="link-arrow js-whatsapp" data-wa-key="chuteiras" data-wa-tag="Futsal">Consultar <span aria-hidden="true">→</span></a>
+          <a href="#" class="link-arrow js-whatsapp" data-wa-key="chuteiras" data-wa-tag="Futsal">Consultar chuteiras futsal <span aria-hidden="true">→</span></a>
         </li>
       </ul>
     </div>
+
+    <p class="rail__note">Consulte modelos, tamanhos e valores com a loja.</p>
 
     <div class="rail__controls">
       <button class="rail__arrow rail__arrow--prev" aria-label="Ver chuteira anterior">‹</button>

@@ -3,6 +3,7 @@
    ========================================================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
+  initPageCopy();
   initHeaderScroll();
   initLogoFallback();
   initWhatsAppLinks();
@@ -16,6 +17,55 @@ document.addEventListener("DOMContentLoaded", () => {
   initMobileBar();
   document.getElementById("ano-atual").textContent = new Date().getFullYear();
 });
+
+/* Copy de conversao: especifico para quem chega pelo celular e procura por esporte/modalidade. */
+function initPageCopy() {
+  document.title = "Real Esportes | Sua loja de esportes em Tijucas";
+  const description = document.querySelector('meta[name="description"]');
+  if (description) {
+    description.setAttribute("content", "Chuteiras, camisas, t\u00eanis e acess\u00f3rios para quem vive o jogo em Tijucas. Escolha o que procura e fale com a Real Esportes.");
+  }
+
+  const setText = (selector, value) => {
+    const element = document.querySelector(selector);
+    if (element) element.textContent = value;
+  };
+  const setLines = (selector, first, second) => {
+    const element = document.querySelector(selector);
+    if (!element) return;
+    element.replaceChildren(document.createTextNode(first), document.createElement("br"), document.createTextNode(second));
+  };
+
+  setText(".hero__eyebrow", "SUA LOJA DE ESPORTES EM TIJUCAS / SC");
+  setLines(".hero__title", "O SEU JOGO", "COME\u00c7A AQUI.");
+  setText(".hero__ctas .btn--gold", "QUERO ENCONTRAR O IDEAL  \u2192");
+  setText(".hero__ctas .btn--outline", "ESCOLHER POR MODALIDADE");
+  setText(".hero__scroll-label", "ROLE");
+
+  const headings = document.querySelectorAll(".section-head__eyebrow");
+  if (headings[0]) headings[0].textContent = "01 / ESCOLHA PELO SEU JOGO";
+  if (headings[1]) headings[1].textContent = "02 / ESCOLHA SEM COMPLICA\u00c7\u00c3O";
+  const sectionTitles = document.querySelectorAll(".section-head__title");
+  if (sectionTitles[0]) setLines("#chuteiras .section-head__title", "A CHUTEIRA CERTA", "MUDA O JOGO.");
+  if (sectionTitles[1]) setLines("#jogo .section-head__title", "VOC\u00ca JOGA", "ONDE?");
+
+  const tags = document.querySelectorAll(".rail__tag");
+  const tagCopy = [
+    "PARA GRAMADO NATURAL",
+    "CAMPO: FIRMEZA EM CADA ARRANCADA",
+    "PARA QUEM VIVE O CAMPO",
+    "SOCIETY: PRONTO PARA A PARTIDA",
+    "FUTSAL: DOM\u00cdNIO DENTRO DA QUADRA"
+  ];
+  tags.forEach((tag, index) => { if (tagCopy[index]) tag.textContent = tagCopy[index]; });
+
+  setText("#finder-label-cat", "HOJE, VOC\u00ca EST\u00c1 ATR\u00c1S DE QU\u00ca?");
+  setText("#finder-cta", "QUERO VER AS OP\u00c7\u00d5ES  \u2192");
+  setLines(".a-real__title", "VIVA O JOGO.", "DO SEU JEITO.");
+  setText(".a-real__text", "Para quem entra em campo no fim de semana, defende o gol, fecha a quadra ou leva o esporte para a rotina. Na Real Esportes, voc\u00ea encontra op\u00e7\u00f5es para viver cada jogo do seu jeito.");
+  setLines(".encontre__title", "A PR\u00d3XIMA PARTIDA", "COME\u00c7A AQUI.");
+  setText(".encontre .btn--gold", "CHAMAR A REAL NO WHATSAPP");
+}
 
 /* Fallback tipográfico do logo: sem handler inline, permite CSP sem unsafe-inline */
 function initLogoFallback() {
@@ -242,6 +292,9 @@ function initRail() {
     const maxLeft = containerWidth - barWidth;
     progressBar.style.width = `${barWidth}px`;
     progressBar.style.transform = `translateX(${ratio * maxLeft}px)`;
+
+    if (prev) prev.disabled = viewport.scrollLeft <= 1;
+    if (next) next.disabled = viewport.scrollLeft >= maxScroll - 1;
   }
   viewport.addEventListener("scroll", updateProgress, { passive: true });
   window.addEventListener("resize", updateProgress);
@@ -308,20 +361,32 @@ function initFinder() {
 
   let categoria = "chuteiras";
   let modalidade = "Campo";
+  let imageRequest = 0;
 
   function render() {
     const data = FINDER_DATA[categoria];
     if (subWrap) subWrap.hidden = !data.hasSub;
 
-    img.classList.add("is-fading");
-    desc.classList.add("is-fading");
-    window.setTimeout(() => {
-      img.src = data.img;
-      img.alt = data.alt;
-      desc.textContent = data.hasSub ? `Chuteiras para ${modalidade}.` : data.desc;
-      img.classList.remove("is-fading");
-      desc.classList.remove("is-fading");
-    }, 180);
+    const request = ++imageRequest;
+    desc.textContent = data.hasSub ? `Chuteiras para ${modalidade}.` : data.desc;
+
+    const nextImage = new Image();
+    nextImage.src = data.img;
+    nextImage.decode()
+      .then(() => {
+        if (request !== imageRequest) return;
+        img.classList.add("is-fading");
+        window.setTimeout(() => {
+          if (request !== imageRequest) return;
+          img.src = data.img;
+          img.alt = data.alt;
+          img.classList.remove("is-fading");
+        }, 180);
+      })
+      .catch(() => {
+        if (request !== imageRequest) return;
+        img.classList.remove("is-fading");
+      });
 
     cta.dataset.waKey = categoria;
     if (data.hasSub) {

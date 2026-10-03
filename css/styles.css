@@ -4,16 +4,16 @@
    ========================================================================== */
 
 :root {
-  --color-bg: #080808;
-  --color-bg-soft: #121212;
-  --color-surface: #F4F2ED;
-  --color-text: #F4F2ED;
-  --color-text-dark: #0E0E0E;
-  --color-text-muted: #A8A6A0;
-  --color-text-muted-dark: #55534E;
-  --color-accent: #C9A227;
-  --color-accent-soft: #E4C566;
-  --color-accent-on-light: #806510;
+  --color-bg: #000000;
+  --color-bg-soft: #181818;
+  --color-surface: #F5F5F5;
+  --color-text: #FFFFFF;
+  --color-text-dark: #000000;
+  --color-text-muted: #A6A6A6;
+  --color-text-muted-dark: #575757;
+  --color-accent: #FFFFFF;
+  --color-accent-soft: #D4D4D4;
+  --color-accent-on-light: #2D2D2D;
   --color-line: rgba(244, 242, 237, 0.14);
   --color-line-dark: rgba(14, 14, 14, 0.12);
 
@@ -27,7 +27,7 @@
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
   --dur: 0.6s;
 
-  --header-h: 72px;
+  --header-h: 88px;
 }
 
 /* ---------- Reset ---------- */
@@ -114,7 +114,7 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
   white-space: nowrap;
 }
 .btn:hover { transform: translateY(-2px); }
-.btn--gold { background: var(--color-accent); color: var(--color-text-dark); }
+.btn--gold { background: var(--color-accent); color: var(--color-text-dark); box-shadow: 0 0 0 1px rgba(255,255,255,0.18); }
 .btn--gold:hover { background: var(--color-accent-soft); }
 .btn--outline { border-color: rgba(244,242,237,0.55); color: var(--color-text); }
 .btn--outline:hover { border-color: var(--color-text); background: rgba(244,242,237,0.08); }
@@ -179,7 +179,7 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
   gap: 1.5rem;
 }
 .header__logo { display: flex; align-items: center; }
-.header__logo-img { height: 32px; width: auto; }
+.header__logo-img { height: 72px; width: 72px; border-radius: 50%; object-fit: cover; }
 .header__logo-img.is-broken { display: none; }
 .header__logo-fallback {
   display: none;
@@ -277,6 +277,7 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
   display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.75rem;
   animation: heroIn 0.6s var(--ease) 0.52s both;
 }
+.hero__ctas .btn:first-child { font-weight: 700; }
 @keyframes heroIn {
   from { opacity: 0; transform: translateY(14px); }
   to { opacity: 1; transform: translateY(0); }
@@ -359,6 +360,27 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
   background: var(--color-accent-soft);
   padding: 0.3rem 0.6rem;
   border-radius: 2px;
+  line-height: 1.35;
+  max-width: calc(100% - 1.7rem);
+}
+.hero__scroll-touch { display: none; }
+.hero__scroll-label {
+  position: absolute;
+  left: 50%;
+  bottom: -1.75rem;
+  transform: translateX(-50%);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.72);
+}
+.rail__note {
+  max-width: var(--container);
+  margin: 1rem auto 0;
+  padding: 0 var(--gap);
+  color: var(--color-text-muted);
+  font-size: 0.82rem;
 }
 
 .rail__controls {
@@ -381,6 +403,7 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
   transition: border-color 0.25s var(--ease), color 0.25s var(--ease);
 }
 .rail__arrow:hover { border-color: var(--color-accent); color: var(--color-accent); }
+.rail__arrow:disabled { opacity: 0.35; cursor: not-allowed; }
 .rail__progress {
   flex: 1;
   max-width: 180px;
@@ -455,7 +478,7 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
   transition: border-color 0.25s var(--ease), color 0.25s var(--ease), background-color 0.25s var(--ease);
 }
 .finder__chip:hover { border-color: var(--color-accent-soft); color: var(--color-text); }
-.finder__chip.is-active { border-color: var(--color-accent); color: var(--color-accent); background: rgba(201, 162, 39, 0.1); }
+.finder__chip.is-active { border-color: var(--color-accent); color: var(--color-accent); background: rgba(255, 255, 255, 0.1); }
 .finder__chip--sub { min-height: 40px; padding: 0.5rem 0.95rem; font-size: 0.78rem; }
 .finder__sub { display: flex; flex-direction: column; gap: 0.7rem; }
 .finder__sub[hidden] { display: none; }
@@ -528,6 +551,19 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
   align-items: center;
 }
 .encontre__media { aspect-ratio: 4 / 3; overflow: hidden; }
+.encontre__media { position: relative; }
+.encontre__media::after {
+  content: "Imagem ilustrativa";
+  position: absolute;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  padding: 0.3rem 0.5rem;
+  background: rgba(8, 8, 8, 0.76);
+  color: var(--color-text);
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
 .encontre__media img { width: 100%; height: 100%; object-fit: cover; }
 .encontre__title {
   font-family: var(--font-display);
@@ -556,6 +592,7 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
 
 .encontre__ig { margin-top: 2rem; }
 .encontre__ig-handle { font-size: 0.85rem; letter-spacing: 0.04em; color: var(--color-text-muted); margin-bottom: 0.75rem; }
+.encontre__ig-handle::after { content: " · inspiraÃ§Ã£o esportiva"; }
 .encontre__ig-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -660,4 +697,36 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
 }
 @media (max-width: 959px) {
   html { scroll-padding-bottom: calc(64px + env(safe-area-inset-bottom, 0px) + 16px); }
+  .hero { min-height: 540px; height: 88svh; }
+  .hero__content { padding-bottom: 5rem; }
+  .hero__ctas { display: grid; grid-template-columns: 1fr; gap: 0.7rem; }
+  .hero__ctas .btn { justify-content: center; width: 100%; }
+  .hero__scroll {
+    bottom: 1.35rem;
+    width: 48px;
+    height: 48px;
+    border: 0;
+  }
+  .hero__scroll-line { display: none; }
+  .hero__scroll-touch {
+    display: block;
+    width: 48px;
+    height: 48px;
+    overflow: visible;
+    fill: none;
+    stroke: rgba(244, 242, 237, 0.92);
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    animation: touchPrompt 1.8s ease-in-out infinite;
+  }
+  .hero__scroll-touch-rays { stroke-width: 2; opacity: 0.78; }
+  .hero__scroll-label { bottom: -1.3rem; }
+  .section-head__title { font-size: clamp(2.1rem, 10vw, 3.25rem); }
+  .rail__card { width: 84%; }
+}
+
+@keyframes touchPrompt {
+  0%, 100% { transform: translateY(3px); opacity: 0.55; }
+  45% { transform: translateY(-3px); opacity: 1; }
 }
