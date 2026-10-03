@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Real Esportes — Viva o Jogo</title>
+<meta name="description" content="Real Esportes: chuteiras, camisas, tênis e acessórios esportivos. Descubra o seu jogo e fale com a gente pelo WhatsApp.">
+<meta name="theme-color" content="#000000">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
+<!-- Protótipo ainda não oficial: remover noindex quando o site se tornar público/oficial -->
+<meta name="robots" content="noindex,nofollow,noarchive">
+
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Real Esportes">
+<meta property="og:title" content="Real Esportes — Viva o Jogo">
+<meta property="og:description" content="Chuteiras, camisas, tênis e acessórios esportivos. Conheça a Real Esportes.">
+<meta property="og:image" content="assets/images/hero.jpg">
+<meta property="og:image:alt" content="Atleta com chuteiras e meiões prontos para o jogo em campo">
+<meta property="og:locale" content="pt_BR">
+<!-- TODO: adicionar <meta property="og:url" content="https://usuario.github.io/real-esportes/"> com a URL absoluta após o deploy no GitHub Pages -->
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="assets/icons/real-esportes-logo.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<!-- ============ HEADER ============ -->
+<header class="header" id="header">
+  <div class="header__inner">
+    <a href="#topo" class="header__logo" aria-label="Real Esportes — início">
+      <img src="assets/icons/real-esportes-logo.png" class="header__logo-img" id="logo-img" alt="Real Esportes">
+      <span class="header__logo-fallback" id="logo-fallback">
+        <span>REAL</span><span>ESPORTES</span>
+      </span>
+    </a>
+
+    <nav class="header__nav" aria-label="Navegação principal">
+      <a href="#chuteiras" class="header__nav-link">Chuteiras</a>
+      <a href="#jogo" class="header__nav-link">Seu Jogo</a>
+      <a href="#a-real" class="header__nav-link">A Real</a>
+      <a href="#encontre" class="header__nav-link">Encontre</a>
+    </nav>
+
+    <div class="header__actions">
+      <a href="#" class="btn btn--gold btn--sm js-whatsapp" data-wa-key="hero" aria-label="Falar no WhatsApp">WhatsApp</a>
+    </div>
+  </div>
+</header>
+
+<div id="topo"></div>
+
+<main id="conteudo">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="hero">
+    <div class="hero__media">
+      <!-- Vídeo opcional: ativado via CONFIG.hero.videoEnabled em js/config.js -->
+      <video class="hero__video" autoplay muted loop playsinline poster="assets/images/hero.jpg" id="hero-video"></video>
+      <img src="assets/images/hero.jpg" srcset="assets/images/hero-mobile.jpg 750w, assets/images/hero.jpg 1067w" sizes="100vw" alt="Atleta com chuteiras e meiões prontos para o jogo em campo" class="hero__img" id="hero-img" loading="eager" fetchpriority="high" decoding="async">
+      <div class="hero__overlay"></div>
+    </div>
+
+    <div class="hero__content">
+      <p class="hero__eyebrow">REAL ESPORTES</p>
+      <h1 class="hero__title">VIVA<br>O JOGO.</h1>
+      <p class="hero__categories">Chuteiras · Camisas · Tênis · Acessórios</p>
+      <div class="hero__ctas">
+        <a href="#chuteiras" class="btn btn--outline">Explorar a Real</a>
+        <a href="#" class="btn btn--gold js-whatsapp" data-wa-key="hero">Falar no WhatsApp</a>
+      </div>
+    </div>
+
+    <a href="#chuteiras" class="hero__scroll" aria-label="Rolar para o conteúdo">
+      <span class="hero__scroll-line"></span>
+      <svg class="hero__scroll-touch" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+        <path d="M31 38V15a5 5 0 0 1 10 0v26" />
+        <path d="M41 34v-7a5 5 0 0 1 10 0v13" />
+        <path d="M31 37v-5a5 5 0 0 0-10 0v11c0 9 7 16 16 16h7c8 0 14-6 14-14v-8a5 5 0 0 0-10 0v5" />
+        <path class="hero__scroll-touch-rays" d="M24 14l-3-3M36 9V5M48 14l3-3" />
+      </svg>
+      <span class="hero__scroll-label" aria-hidden="true">Role</span>
+    </a>
+  </section>
+
+  <!-- ============ CHUTEIRAS EM DESTAQUE ============ -->
+  <section class="rail" id="chuteiras" aria-label="Chuteiras em destaque">
+    <div class="section-head">
+      <p class="section-head__eyebrow reveal">01 / EXPLORE</p>
+      <h2 class="section-head__title reveal">CHUTEIRAS<br>EM DESTAQUE.</h2>
+    </div>
+
+    <div class="rail__viewport" id="rail-viewport">
+      <ul class="rail__track" id="rail-track">
+        <li class="rail__card reveal">
+          <div class="rail__media">
+            <img src="assets/images/produto-01.jpg" alt="Jovem atleta segurando uma chuteira de campo em estúdio" loading="lazy" decoding="async" draggable="false" width="800" height="1000">
+            <span class="rail__tag">Chuteiras de campo</span>
+          </div>
+          <a href="#" class="link-arrow js-whatsapp" data-wa-key="chuteiras" data-wa-tag="Campo">Consultar chuteiras de campo <span aria-hidden="true">→</span></a>
+        </li>
+        <li class="rail__card reveal">
+          <div class="rail__media">
+            <img src="assets/images/sticky-campo.jpg" alt="Chuteira e bola sobre gramado natural" loading="lazy" decoding="async" draggable="false" width="800" height="1000">
+            <span class="rail__tag">Para jogar em campo</span>
+          </div>
+          <a href="#" class="link-arrow js-whatsapp" data-wa-key="chuteiras" data-wa-tag="Campo">Consultar chuteiras de campo <span aria-hidden="true">→</span></a>
+        </li>
+        <li class="rail__card reveal">
+          <div class="rail__media">
+            <img src="assets/images/produto-02.jpg" alt="Par de chuteiras em destaque sobre o gramado" loading="lazy" decoding="async" draggable="false" width="800" height="1000">
+            <span class="rail__tag">Chuteiras de campo</span>
+          </div>
+          <a href="#" class="link-arrow js-whatsapp" data-wa-key="chuteiras" data-wa-tag="Campo">Consultar chuteiras de campo <span aria-hidden="true">→</span></a>
+        </li>
+        <li class="rail__card reveal">
+          <div class="rail__media">
+            <img src="assets/images/sticky-society.jpg" alt="Bola sobre grama sintética em campo society" loading="lazy" decoding="async" draggable="false" width="800" height="1000">
+            <span class="rail__tag">Para jogar em society</span>
+          </div>
+          <a href="#" class="link-arrow js-whatsapp" data-wa-key="chuteiras" data-wa-tag="Society">Consultar chuteiras society <span aria-hidden="true">→</span></a>
+        </li>
+        <li class="rail__card reveal">
+          <div class="rail__media">
+            <img src="assets/images/sticky-futsal.jpg" alt="Bola de futsal em quadra coberta" loading="lazy" decoding="async" draggable="false" width="800" height="1000">
+            <span class="rail__tag">Para jogar futsal</span>
+          </div>
+          <a href="#" class="link-arrow js-whatsapp" data-wa-key="chuteiras" data-wa-tag="Futsal">Consultar chuteiras futsal <span aria-hidden="true">→</span></a>
+        </li>
+      </ul>
+    </div>
+
+    <p class="rail__note">Consulte modelos, tamanhos e valores com a loja.</p>
+
+    <div class="rail__controls">
+      <button class="rail__arrow rail__arrow--prev" aria-label="Ver chuteira anterior">‹</button>
+      <div class="rail__progress"><span class="rail__progress-bar" id="rail-progress"></span></div>
+      <button class="rail__arrow rail__arrow--next" aria-label="Ver próxima chuteira">›</button>
+    </div>
+  </section>
+
+  <!-- ============ QUAL É O SEU JOGO? ============ -->
+  <section class="finder" id="jogo">
+    <div class="section-head">
+      <p class="section-head__eyebrow reveal">02 / SEU JOGO</p>
+      <h2 class="section-head__title reveal">QUAL É<br>O SEU JOGO?</h2>
+    </div>
+
+    <div class="finder__panel reveal">
+      <div class="finder__media">
+        <img src="assets/images/categoria-chuteiras.jpg" alt="Chuteira de futebol em campo gramado" id="finder-img" loading="lazy" decoding="async" width="960" height="640">
+      </div>
+
+      <div class="finder__controls">
+        <p class="finder__label" id="finder-label-cat">O QUE VOCÊ PROCURA?</p>
+        <div class="finder__chips" role="group" aria-labelledby="finder-label-cat">
+          <button type="button" class="finder__chip is-active" data-categoria="chuteiras" aria-pressed="true">Chuteiras</button>
+          <button type="button" class="finder__chip" data-categoria="camisas" aria-pressed="false">Camisas</button>
+          <button type="button" class="finder__chip" data-categoria="tenis" aria-pressed="false">Tênis</button>
+          <button type="button" class="finder__chip" data-categoria="acessorios" aria-pressed="false">Acessórios</button>
+        </div>
+
+        <div class="finder__sub" id="finder-sub">
+          <p class="finder__label" id="finder-label-mod">ONDE VOCÊ JOGA?</p>
+          <div class="finder__chips finder__chips--sub" role="group" aria-labelledby="finder-label-mod">
+            <button type="button" class="finder__chip finder__chip--sub is-active" data-modalidade="Campo" aria-pressed="true">Campo</button>
+            <button type="button" class="finder__chip finder__chip--sub" data-modalidade="Society" aria-pressed="false">Society</button>
+            <button type="button" class="finder__chip finder__chip--sub" data-modalidade="Futsal" aria-pressed="false">Futsal</button>
+          </div>
+        </div>
+
+        <p class="finder__desc" id="finder-desc" aria-live="polite">Chuteiras para Campo.</p>
+
+        <a href="#" class="btn btn--gold js-whatsapp" id="finder-cta" data-wa-key="chuteiras" data-wa-tag="Campo">Consultar no WhatsApp <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ A REAL ============ -->
+  <section class="a-real" id="a-real">
+    <div class="a-real__inner">
+      <div class="a-real__media reveal">
+        <img src="assets/images/editorial.jpg" alt="Tênis esportivo em cena urbana, transição do campo para a rua" loading="lazy" decoding="async" width="1000" height="667">
+      </div>
+      <div class="a-real__content reveal">
+        <p class="section-head__eyebrow">03 / A REAL</p>
+        <h2 class="a-real__title">A REAL.</h2>
+        <p class="a-real__tagline">Do campo para a rua.</p>
+        <!-- TODO: substituir pela história oficial da Real Esportes quando disponível -->
+        <p class="a-real__text">Esporte faz parte da nossa rotina. Na Real Esportes, reunimos produtos para quem vive o jogo dentro e fora de campo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ENCONTRE A REAL ============ -->
+  <section class="encontre" id="encontre">
+    <div class="encontre__inner">
+      <div class="encontre__media reveal">
+        <img src="assets/images/loja-fachada.jpg" alt="Fachada de loja, imagem ilustrativa e genérica" loading="lazy" decoding="async" width="1000" height="800">
+      </div>
+
+      <div class="encontre__content reveal">
+        <p class="section-head__eyebrow">04 / ENCONTRE</p>
+        <h2 class="encontre__title">ENCONTRE<br>A REAL.</h2>
+
+        <dl class="encontre__info" id="loja-info">
+          <div id="loja-endereco-item">
+            <dt>Endereço</dt>
+            <dd id="loja-endereco"></dd>
+          </div>
+          <div id="loja-horarios-item">
+            <dt>Horários</dt>
+            <dd id="loja-horarios"></dd>
+          </div>
+        </dl>
+
+        <a href="#" class="btn btn--gold btn--lg js-whatsapp" data-wa-key="loja">Falar com a Real</a>
+
+        <div class="encontre__ig">
+          <p class="encontre__ig-handle" id="ig-handle">@lojarealesportes</p>
+          <div class="encontre__ig-grid">
+            <img src="assets/images/instagram-01.jpg" alt="Publicação simulada do Instagram — jogador conduzindo a bola em campo" loading="lazy" decoding="async" width="300" height="300">
+            <img src="assets/images/instagram-02.jpg" alt="Publicação simulada do Instagram — goleiro em ação no gol" loading="lazy" decoding="async" width="300" height="300">
+            <img src="assets/images/instagram-03.jpg" alt="Publicação simulada do Instagram — bola de futebol em gramado" loading="lazy" decoding="async" width="300" height="300">
+          </div>
+          <a href="https://www.instagram.com/lojarealesportes/" target="_blank" rel="noopener noreferrer" class="link-arrow" id="ig-cta">Ver Instagram <span aria-hidden="true">→</span></a>
+        </div>
+
+        <a href="#" class="link-arrow encontre__maps js-maps">Como chegar <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <span>REAL</span><span>ESPORTES</span>
+    </div>
+    <a href="https://www.instagram.com/lojarealesportes/" target="_blank" rel="noopener noreferrer" class="footer__ig">Instagram</a>
+  </div>
+  <p class="footer__copy">© <span id="ano-atual"></span> Real Esportes.</p>
+</footer>
+
+<!-- ============ BARRA MOBILE FIXA ============ -->
+<nav class="mobile-bar" aria-label="Ações rápidas">
+  <a href="#" class="mobile-bar__item js-whatsapp" data-wa-key="hero">
+    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.86 9.86 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.11c-.24.68-1.4 1.3-1.93 1.38-.5.08-1.12.11-1.8-.11-.42-.13-.95-.31-1.64-.6-2.88-1.24-4.76-4.14-4.9-4.33-.14-.19-1.17-1.56-1.17-2.98 0-1.42.75-2.11 1.01-2.4.27-.29.58-.36.78-.36h.56c.18 0 .42-.07.65.5.24.58.81 2 .88 2.14.07.14.12.31.02.5-.1.19-.15.31-.29.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.02 1.12.99 2.06 1.31 2.35 1.45.29.14.46.12.63-.07.17-.19.72-.83.91-1.11.19-.29.38-.24.63-.14.26.1 1.64.77 1.92.91.29.14.48.21.55.33.07.12.07.71-.17 1.39z"/></svg>
+    <span>WhatsApp</span>
+  </a>
+  <a href="https://www.instagram.com/lojarealesportes/" target="_blank" rel="noopener noreferrer" class="mobile-bar__item">
+    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.72 3.72 0 0 1-1.38-.9 3.72 3.72 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07zM12 0C8.74 0 8.33.01 7.05.07c-1.28.06-2.15.26-2.91.56a5.9 5.9 0 0 0-2.13 1.39A5.9 5.9 0 0 0 .62 4.14c-.3.76-.5 1.63-.56 2.91C0 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.28.26 2.15.56 2.91.31.79.72 1.46 1.39 2.13a5.9 5.9 0 0 0 2.13 1.39c.76.3 1.63.5 2.91.56C8.33 24 8.74 24 12 24s3.67-.01 4.95-.07c1.28-.06 2.15-.26 2.91-.56a5.9 5.9 0 0 0 2.13-1.39 5.9 5.9 0 0 0 1.39-2.13c.3-.76.5-1.63.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.28-.26-2.15-.56-2.91a5.9 5.9 0 0 0-1.39-2.13A5.9 5.9 0 0 0 19.86.63c-.76-.3-1.63-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4zm6.41-10.4a1.44 1.44 0 1 1-1.44-1.44 1.44 1.44 0 0 1 1.44 1.44z"/></svg>
+    <span>Instagram</span>
+  </a>
+  <a href="#" class="mobile-bar__item js-maps">
+    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12 2C7.86 2 4.5 5.36 4.5 9.5c0 5.25 6.6 11.62 6.88 11.89a.9.9 0 0 0 1.24 0c.28-.27 6.88-6.64 6.88-11.89C19.5 5.36 16.14 2 12 2zm0 10.5a3 3 0 1 1 3-3 3 3 0 0 1-3 3z"/></svg>
+    <span>Como chegar</span>
+  </a>
+</nav>
+
+<script src="js/config.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
